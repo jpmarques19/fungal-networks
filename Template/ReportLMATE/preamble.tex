@@ -1,0 +1,62 @@
+\usepackage{a4}
+% Better fonts and spacing
+\usepackage[activate={true,nocompatibility},babel=true,tracking=true,kerning=true,final]{microtype}
+%%% Escrita em português
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese,portuges]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+% para texto sobre a imagem
+\usepackage[abs]{overpic}
+\usepackage{rotating}
+% Na versão impressa devemos ter colorlinks=false pdfborder={0 0 0}
+\usepackage[pdftex,colorlinks=false,pdfborder={0 0 0},bookmarksopen,bookmarksnumbered]{hyperref}
+\usepackage{mathrsfs}
+% Para a fonte das legendas das figuras
+\usepackage[hang,small,bf]{caption}
+% Dimensões do papel e impressão
+\usepackage[a4paper,bindingoffset=0.5cm,margin=2.5cm,twoside,
+        top=3.5cm,bottom=3.0cm]{geometry}
+% Para gráficos svg pdf_tex
+\usepackage{import}
+\usepackage{color}
+% Sistema internacional para as unidades
+\usepackage{siunitx}
+% Lista de simbolos
+\usepackage[refpage,noprefix,portuguese]{nomencl}
+%Footnote on titles
+\usepackage[stable]{footmisc}
+\usepackage{pdfpages}
+%% Para parágrafo dentro dos enums e itemizes
+\usepackage{enumitem}
+
+\setlist{parsep=0pt,listparindent=\parindent}
+\makeatletter
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+%% Nome da lista de símbolos
+\renewcommand{\nomname}{Lista de S\'{i}mbolos}
+%% Por ordem alfabética
+\newcommand{\nnom}[3]{\nomenclature[#1]{#2}{#3}}
+
+%%% Designação para a table of contents
+\addto\captionsportuges{% Replace "english" with the language you use
+  \renewcommand*{\contentsname}%
+    {\'{I}ndice}%
+}
+
+
+\usepackage[titletoc]{appendix}
+\renewcommand{\appendixtocname}{Anexos}
+\renewcommand{\appendixname}{Anexo}
+\renewcommand{\appendixpagename}{Anexos}
+\usepackage{tocvsec2}
+
+\addto\captionsportuges{% Replace "english" with the language you use
+  \renewcommand*{\appendixname}%
+    {Anexo}%
+}

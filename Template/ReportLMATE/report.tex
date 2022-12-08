@@ -1,0 +1,78 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% comandos para  compilação:
+%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% pdflatex -shell-escape report
+%%%% makeindex report.nlo -s nomencl.ist -o report.nls
+%%%% makeindex report
+%%%% pdflatex -shell-escape report
+%%%% pdflatex -shell-escape report
+%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{book}
+
+\input{preamble}
+
+\makeatother
+\makenomenclature
+
+\begin{document}
+
+{
+% Capa
+\pagestyle{empty}
+\pagenumbering{roman}
+\include{capa}
+\cleardoublepage
+% Folha de rosto
+\include{capa}
+\cleardoublepage
+\pagestyle{plain}
+\setcounter{page}{1}
+% Direitos de Cópia
+\include{chapter0/copy}
+\cleardoublepage
+% Agradecimentos e dedicatória
+\include{chapter0/agradecimentos}
+\cleardoublepage
+% Resumo em português e inglês
+\include{chapter0/resumo}
+\cleardoublepage
+\include{chapter0/abstract}
+\cleardoublepage
+% lista de conteúdos
+\tableofcontents
+\cleardoublepage
+% lista de figuras
+\listoffigures
+% lista de tabelas
+\cleardoublepage
+\listoftables
+\cleardoublepage
+%\printnomenclature
+\include{report_nls}
+\cleardoublepage
+}
+
+
+\pagenumbering{arabic}
+\pagestyle{plain}
+\include{chapter1/chapter}
+\include{chapter2/chapter}
+\include{chapter3/chapter}
+\include{chapter4/chapter}
+%%% introduzir mais cap. se necessário
+
+%%%Introduzir entrada de bibliografia no índice
+\addcontentsline{toc}{chapter}{\bibname}
+%%%Ficheiro com a bibliografia
+\include{report_bbl}
+%%% Se necessário introduzir anexos depois da bibliografia
+\begin{appendices}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\settocdepth{chapter}
+%%% aqui necessita de ser input e não include
+\input{anexos/anexoA}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{appendices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
